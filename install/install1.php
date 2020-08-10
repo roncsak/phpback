@@ -102,7 +102,7 @@ if (!isset($_SERVER["HTTP_HOST"]))
 if ($_POST['adminpass'] != $_POST['adminrpass'])
     exitOnError('Admin passwords do not match');
 
-$server = new mysqli($_POST['hostname'], $_POST['username'], $_POST['password']);
+$server = new mysqli($_POST['hostname'], $_POST['username'], $_POST['password'], 3306);
 
 if ($server->connect_error) {
     $str = mb_convert_encoding($server->connect_error, "UTF-8", "auto");
