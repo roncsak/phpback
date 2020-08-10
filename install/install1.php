@@ -105,7 +105,7 @@ if ($_POST['adminpass'] != $_POST['adminrpass'])
 $server = new mysqli($_POST['hostname'], $_POST['username'], $_POST['password'], 3306);
 
 if ($server->connect_error) {
-    $str = mb_convert_encoding($server->connect_error, "UTF-8", "auto");
+    // $str = mb_convert_encoding($server->connect_error, "UTF-8", "auto");
     exitOnError('ERROR #2: Server connection error (' . $server->connect_errno . ') ' . $str);
 }
 
